@@ -36,7 +36,19 @@ public class MoodAnalyzerTest {
             mood = moodAnalyzer.analyseMethod();
         }
         catch (MoodAnalyzeException e) {
-            Assert.assertEquals("Happy" , e.getMessage());
+            Assert.assertEquals(MoodAnalyzeException.ExceptionType.ENTERED_NULL,e.type);
+        }
+
+    }
+    @Test
+    public void givenEmptyMessage_Return_Exception(){
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer("");
+        String mood = null;
+        try {// Error line is we have invoked constructor having null value, now string is set is set to null now string message is null
+            mood = moodAnalyzer.analyseMethod();
+        }
+        catch (MoodAnalyzeException e) {
+            Assert.assertEquals(MoodAnalyzeException.ExceptionType.ENTERED_EMPTY,e.type);
         }
 
     }
