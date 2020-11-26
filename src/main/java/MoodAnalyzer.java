@@ -28,7 +28,7 @@ public class MoodAnalyzer {
             }
         }
         catch (NullPointerException e){  // if null pointer exception ocured throw below exception with message
-            throw new MoodAnalyzeException(MoodAnalyzeException.ExceptionType.ENTERED_NULL,"ExceptionNull");
+            throw new MoodAnalyzeException(MoodAnalyzeException.ExceptionType.ENTERED_NULL,"Happy");
         }
     }
 }
